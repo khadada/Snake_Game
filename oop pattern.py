@@ -25,9 +25,13 @@ while game_is_on:
         print("hom hom hom")
         food.refresh()
         score.score_up()
-    if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 240 or snake.head.ycor() < -240:
+        snake.grow_up()
+    if snake.head.xcor() > 250 or snake.head.xcor() < -250 or snake.head.ycor() > 295 or snake.head.ycor() < -295:
         game_is_on = False
         score.game_over()
-
+    for seg in snake.segments[1:]:
+        if snake.head.distance(seg) < 10:
+            score.game_over()
+            game_is_on = False
 
 screen.exitonclick()
