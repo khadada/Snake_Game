@@ -4,10 +4,9 @@ import time
 from food import Food
 from score_module import Score
 screen = Screen()
-screen.setup(width=500, height=300)
+screen.setup(width=600, height=500)
 screen.bgcolor('black')
 screen.title('Snake Game')
-
 screen.tracer(0)    # stop tracer until the snake is ready
 score = Score()
 snake = Snake()
@@ -26,6 +25,9 @@ while game_is_on:
         print("hom hom hom")
         food.refresh()
         score.score_up()
+    if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 240 or snake.head.ycor() < -240:
+        game_is_on = False
+        score.game_over()
 
 
 screen.exitonclick()

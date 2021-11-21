@@ -11,7 +11,7 @@ class Score(Turtle):
         self.score_print()
 
     def score_print(self):
-        self.goto(-30, 250)
+        self.goto(0, 225)
         self.color('white')
         self.write(f"score is: {self.score} ", align=ALIGNMENT, font=FONT)
 
@@ -19,3 +19,8 @@ class Score(Turtle):
         self.clear()
         self.score += 1
         self.score_print()
+
+    def game_over(self):
+        self.goto(0,0)
+        self.write("Game over ", align=ALIGNMENT, font=FONT)
+
