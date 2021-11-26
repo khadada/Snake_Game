@@ -9,7 +9,7 @@ screen.bgcolor('black')
 screen.title('Snake Game')
 screen.tracer(0)    # stop tracer until the snake is ready
 score = Score()
-score.fetch_high_score()
+#score.fetch_high_score()
 snake = Snake()
 food = Food()
 game_is_on = True
@@ -22,7 +22,7 @@ while game_is_on:
     screen.update()      # because all segments in their position we update the screen
     time.sleep(0.3)      # here to wait the all segment take its new position
     snake.move()
-    score.fetch_high_score()
+#    score.fetch_high_score()
 
     if snake.head.distance(food) < 15:
         print("hom hom hom")
